@@ -6160,7 +6160,7 @@ PrefabInstance:
     - target: {fileID: 2720591490639099305, guid: 66681e222f9eaab44adf19fcdaf42187,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: Game Camera
       objectReference: {fileID: 0}
     - target: {fileID: 2720591490639099318, guid: 66681e222f9eaab44adf19fcdaf42187,
         type: 3}
