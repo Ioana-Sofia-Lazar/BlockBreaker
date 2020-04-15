@@ -389,10 +389,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8801220471301817261, guid: 22da108c016c0b6428c48b663ff533f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8950806955557882686, guid: 22da108c016c0b6428c48b663ff533f2,
         type: 3}
       propertyPath: m_Name
-      value: Game Status
+      value: Game Session
       objectReference: {fileID: 0}
     - target: {fileID: 8950806955557882687, guid: 22da108c016c0b6428c48b663ff533f2,
         type: 3}
