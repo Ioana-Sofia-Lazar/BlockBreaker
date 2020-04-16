@@ -9,11 +9,27 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
+        CountBreakableBlocks();
+    }
+
+    private void CountBreakableBlocks()
+    {
         level = FindObjectOfType<Level>();
-        level.IncrementBreakableBlocks();
+        if (tag == "Breakable")
+        {
+            level.IncrementBreakableBlocks();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (tag == "Breakable")
+        {
+            DestroyBlock();
+        }
+    }
+
+    private void DestroyBlock()
     {
         FindObjectOfType<GameSession>().AddToScore();
         Destroy(gameObject);
