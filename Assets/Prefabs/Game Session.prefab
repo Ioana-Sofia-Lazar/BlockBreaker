@@ -82,6 +82,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 735542443, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_textAlignment
+      value: 258
+      objectReference: {fileID: 0}
     - target: {fileID: 437852896018726458, guid: 2602038aade31ed40b2994eb8f5d0811,
         type: 3}
       propertyPath: m_Name
