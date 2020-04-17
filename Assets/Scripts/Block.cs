@@ -6,7 +6,6 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
 
-    [SerializeField] int maxHits;
     [SerializeField] Sprite[] damageLevelSprites;
 
     Level level;
@@ -38,6 +37,8 @@ public class Block : MonoBehaviour
     private void HandleHit()
     {
         timesHit++;
+        
+        int maxHits = damageLevelSprites.Length + 1;
         if (timesHit >= maxHits)
         {
             DestroyBlock();
@@ -51,7 +52,14 @@ public class Block : MonoBehaviour
     private void ShowNextDamageLevelSprite()
     {
         int spriteIndex = timesHit - 1;
-        GetComponent<SpriteRenderer>().sprite = damageLevelSprites[spriteIndex];
+        if (damageLevelSprites[spriteIndex] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = damageLevelSprites[spriteIndex];
+        }
+        else
+        {
+            Debug.LogError("Block sprite missing from array " + gameObject.name);
+        }
     }
 
     private void DestroyBlock()
