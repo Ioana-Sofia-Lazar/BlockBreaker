@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0cd67f2e33ca647b7caf23b08217c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 1
-  pointsPerBlock: 83
+  gameSpeed: 3
+  pointsPerBlock: 26
   scoreText: {fileID: 8950806956731416888}
   isAutoPlayEnabled: 1
   currentScore: 0
@@ -56,6 +56,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8950806955557882687}
     m_Modifications:
+    - target: {fileID: 735542442, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 735542442, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 735542443, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a62253906e397444ace0dec685ae1c1,
+        type: 2}
+    - target: {fileID: 735542443, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21826363754573306, guid: 6a62253906e397444ace0dec685ae1c1,
+        type: 2}
+    - target: {fileID: 735542443, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_fontSize
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 735542443, guid: 2602038aade31ed40b2994eb8f5d0811, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 437852896018726458, guid: 2602038aade31ed40b2994eb8f5d0811,
         type: 3}
       propertyPath: m_Name
