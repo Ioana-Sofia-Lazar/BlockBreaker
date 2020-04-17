@@ -5,7 +5,11 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
 
+    [SerializeField] int maxHits;
+
     Level level;
+
+    [SerializeField] int timesHit;
 
     private void Start()
     {
@@ -24,6 +28,15 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (tag == "Breakable")
+        {
+            HandleHit();
+        }
+    }
+
+    private void HandleHit()
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
         {
             DestroyBlock();
         }
