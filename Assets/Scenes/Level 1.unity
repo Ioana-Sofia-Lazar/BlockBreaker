@@ -732,6 +732,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5479818371770300870, guid: d310c796ed2e6a748b25f2491afed47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd5497cf37751b42a3ba4d5fa0b1327,
+        type: 3}
+    - target: {fileID: 5479818371770300871, guid: d310c796ed2e6a748b25f2491afed47f,
+        type: 3}
+      propertyPath: m_Name
+      value: Background
+      objectReference: {fileID: 0}
     - target: {fileID: 5479818372316590966, guid: d310c796ed2e6a748b25f2491afed47f,
         type: 3}
       propertyPath: m_Name
@@ -824,7 +835,7 @@ PrefabInstance:
     - target: {fileID: 7496272790846829374, guid: 4e20caacb1e510444afbf252c840b021,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.88
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 7496272790846829374, guid: 4e20caacb1e510444afbf252c840b021,
         type: 3}
