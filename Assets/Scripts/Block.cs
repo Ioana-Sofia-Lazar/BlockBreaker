@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class Block : MonoBehaviour
 {
 
     [SerializeField] int maxHits;
+    [SerializeField] Sprite[] damageLevelSprites;
 
     Level level;
 
@@ -40,6 +42,16 @@ public class Block : MonoBehaviour
         {
             DestroyBlock();
         }
+        else
+        {
+            ShowNextDamageLevelSprite();
+        }
+    }
+
+    private void ShowNextDamageLevelSprite()
+    {
+        int spriteIndex = timesHit - 1;
+        GetComponent<SpriteRenderer>().sprite = damageLevelSprites[spriteIndex];
     }
 
     private void DestroyBlock()
