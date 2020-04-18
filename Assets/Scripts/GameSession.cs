@@ -10,13 +10,14 @@ public class GameSession : MonoBehaviour
 
     [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsPerBlock = 63;
-    [SerializeField] int pointsPerLevelWon = 500;
+    [SerializeField] int pointsPerLevelWon = 200;
+    [SerializeField] int pointsPerLifeNotUsed = 500;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] bool isAutoPlayEnabled = false;
     [SerializeField] GameObject[] hearts; 
 
     [SerializeField] int currentScore = 0;
-    [SerializeField] int triesLeft = 3;
+    [SerializeField] int livesLeft = 3;
 
     SceneLoader sceneLoader;
 
@@ -49,7 +50,6 @@ public class GameSession : MonoBehaviour
     {
         currentScore += pointsPerBlock;
         scoreText.text = currentScore.ToString();
-        FindObjectOfType<Level>().AddToLevelScore(pointsPerBlock);
     }
 
     public void ResetGame()
@@ -64,15 +64,20 @@ public class GameSession : MonoBehaviour
 
     public void HandleLevelWon()
     {
-        currentScore += pointsPerLevelWon;
+        AddExtraPointsToScore(pointsPerLevelWon);
+        if (sceneLoader.IsNextSceneWinScreen())
+        {
+            AddExtraPointsToScore(pointsPerLifeNotUsed * livesLeft);
+        }
+
         sceneLoader.LoadNextScene();
     }
 
     public void HandleLevelLost()
     {
-        triesLeft--;
+        livesLeft--;
         UpdateHearts();
-        if (triesLeft == 0)
+        if (livesLeft == 0)
         {
             ResetGameSession();
         }
@@ -82,9 +87,14 @@ public class GameSession : MonoBehaviour
         }
     }
 
+    private void AddExtraPointsToScore(int points)
+    {
+        currentScore += points;
+        scoreText.text = currentScore.ToString();
+    }
+
     private void ResetScene()
     {
-        int scoreAddedForLostLevel = FindObjectOfType<Level>().GetLevelScore();
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
@@ -93,7 +103,7 @@ public class GameSession : MonoBehaviour
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < triesLeft)
+            if (i < livesLeft)
             {
                 hearts[i].gameObject.SetActive(true);
             }

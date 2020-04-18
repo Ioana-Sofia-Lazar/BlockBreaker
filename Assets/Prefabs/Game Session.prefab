@@ -261,7 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 1
-  pointsPerBlock: 53
+  pointsPerBlock: 63
+  pointsPerLevelWon: 200
   scoreText: {fileID: 8950806956731416888}
   isAutoPlayEnabled: 0
   hearts:

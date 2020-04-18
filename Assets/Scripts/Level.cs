@@ -7,8 +7,6 @@ public class Level : MonoBehaviour
 
     [SerializeField] int breakableBlocks;
 
-    [SerializeField] int levelScore = 0;
-
     GameSession gameSession;
 
     private void Start()
@@ -28,15 +26,5 @@ public class Level : MonoBehaviour
         {
             gameSession.HandleLevelWon();
         }
-    }
-
-    public void AddToLevelScore(int points)
-    {
-        levelScore += points;
-    }
-
-    public int GetLevelScore()
-    {
-        return levelScore;
     }
 }
