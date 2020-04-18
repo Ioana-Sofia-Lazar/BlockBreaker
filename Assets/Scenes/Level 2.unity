@@ -209,6 +209,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Session
       objectReference: {fileID: 0}
+    - target: {fileID: 8950806955557882686, guid: 22da108c016c0b6428c48b663ff533f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8950806955557882687, guid: 22da108c016c0b6428c48b663ff533f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,7 +269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1581108996, guid: 22da108c016c0b6428c48b663ff533f2, type: 3}
+    - {fileID: 998734860, guid: 22da108c016c0b6428c48b663ff533f2, type: 3}
+    - {fileID: 418965874, guid: 22da108c016c0b6428c48b663ff533f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22da108c016c0b6428c48b663ff533f2, type: 3}
 --- !u!1001 &124621025
 PrefabInstance:
