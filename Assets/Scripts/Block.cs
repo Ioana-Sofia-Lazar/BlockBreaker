@@ -64,7 +64,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        FindObjectOfType<GameSession>().AddToScore();
+        FindObjectOfType<GameSession>().AddToScore(tag);
         Destroy(gameObject);
         level.DecrementBreakableBlocks();
     }

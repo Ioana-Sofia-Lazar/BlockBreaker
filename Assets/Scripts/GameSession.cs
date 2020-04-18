@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -10,8 +12,10 @@ public class GameSession : MonoBehaviour
     [SerializeField] int pointsPerBlock = 83;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] bool isAutoPlayEnabled;
+    [SerializeField] GameObject[] hearts; 
 
     [SerializeField] int currentScore = 0;
+    [SerializeField] int triesLeft = 3;
 
     private void Awake()
     {
@@ -32,16 +36,16 @@ public class GameSession : MonoBehaviour
         scoreText.text = currentScore.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Time.timeScale = gameSpeed;
     }
 
-    public void AddToScore()
+    public void AddToScore(String tag)
     {
         currentScore += pointsPerBlock;
         scoreText.text = currentScore.ToString();
+        FindObjectOfType<Level>().AddToLevelScore(pointsPerBlock);
     }
 
     public void ResetGame()
@@ -53,4 +57,48 @@ public class GameSession : MonoBehaviour
     {
         return isAutoPlayEnabled;
     }
+
+    public void HandleLevelLost()
+    {
+        triesLeft--;
+        UpdateHearts();
+        if (triesLeft == 0)
+        {
+            ResetGameSession();
+        }
+        else
+        {
+            ResetScene();
+        }
+    }
+
+    private void ResetScene()
+    {
+        int scoreAddedForLostLevel = FindObjectOfType<Level>().GetLevelScore();
+        currentScore -= scoreAddedForLostLevel;
+        scoreText.text = currentScore.ToString();
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    private void UpdateHearts()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < triesLeft)
+            {
+                hearts[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                hearts[i].gameObject.SetActive(false);
+            }         
+        }
+    }
+
+    private void ResetGameSession()
+    {
+        SceneManager.LoadScene("Game Over");
+    }
+
 }

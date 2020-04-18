@@ -7,6 +7,8 @@ public class Level : MonoBehaviour
 
     [SerializeField] int breakableBlocks;
 
+    [SerializeField] int levelScore = 0;
+
     SceneLoader sceneLoader;
 
     private void Start()
@@ -26,5 +28,15 @@ public class Level : MonoBehaviour
         {
             sceneLoader.LoadNextScene();
         }
+    }
+
+    public void AddToLevelScore(int points)
+    {
+        levelScore += points;
+    }
+
+    public int GetLevelScore()
+    {
+        return levelScore;
     }
 }
