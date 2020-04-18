@@ -9,11 +9,11 @@ public class Level : MonoBehaviour
 
     [SerializeField] int levelScore = 0;
 
-    SceneLoader sceneLoader;
+    GameSession gameSession;
 
     private void Start()
     {
-        sceneLoader = FindObjectOfType<SceneLoader>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     public void IncrementBreakableBlocks()
@@ -26,7 +26,7 @@ public class Level : MonoBehaviour
         breakableBlocks--;
         if (breakableBlocks <= 0)
         {
-            sceneLoader.LoadNextScene();
+            gameSession.HandleLevelWon();
         }
     }
 

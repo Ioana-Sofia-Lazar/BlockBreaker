@@ -9,13 +9,16 @@ public class GameSession : MonoBehaviour
 {
 
     [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
-    [SerializeField] int pointsPerBlock = 83;
+    [SerializeField] int pointsPerBlock = 63;
+    [SerializeField] int pointsPerLevelWon = 500;
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] bool isAutoPlayEnabled;
+    [SerializeField] bool isAutoPlayEnabled = false;
     [SerializeField] GameObject[] hearts; 
 
     [SerializeField] int currentScore = 0;
     [SerializeField] int triesLeft = 3;
+
+    SceneLoader sceneLoader;
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
+        sceneLoader = FindObjectOfType<SceneLoader>();
         scoreText.text = currentScore.ToString();
     }
 
@@ -58,6 +62,12 @@ public class GameSession : MonoBehaviour
         return isAutoPlayEnabled;
     }
 
+    public void HandleLevelWon()
+    {
+        currentScore += pointsPerLevelWon;
+        sceneLoader.LoadNextScene();
+    }
+
     public void HandleLevelLost()
     {
         triesLeft--;
@@ -75,8 +85,6 @@ public class GameSession : MonoBehaviour
     private void ResetScene()
     {
         int scoreAddedForLostLevel = FindObjectOfType<Level>().GetLevelScore();
-        currentScore -= scoreAddedForLostLevel;
-        scoreText.text = currentScore.ToString();
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
