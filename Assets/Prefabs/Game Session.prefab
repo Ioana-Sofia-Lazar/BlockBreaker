@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1542187624}
   - component: {fileID: 1542187626}
   - component: {fileID: 1542187627}
-  - component: {fileID: 1581108996}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
@@ -73,18 +72,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1581108996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542187625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1436fb6ae3b2a8b43ab6c7ebd9318d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6609574300399108013
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +83,6 @@ GameObject:
   - component: {fileID: 6609574300399108012}
   - component: {fileID: 6609574300399108014}
   - component: {fileID: 6609574300399108015}
-  - component: {fileID: 418965874}
   m_Layer: 5
   m_Name: Heart (2)
   m_TagString: Untagged
@@ -158,18 +144,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &418965874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6609574300399108013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1436fb6ae3b2a8b43ab6c7ebd9318d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6609574301262285848
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +155,6 @@ GameObject:
   - component: {fileID: 6609574301262285849}
   - component: {fileID: 6609574301262285851}
   - component: {fileID: 6609574301262285850}
-  - component: {fileID: 998734860}
   m_Layer: 5
   m_Name: Heart (1)
   m_TagString: Untagged
@@ -243,18 +216,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &998734860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6609574301262285848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1436fb6ae3b2a8b43ab6c7ebd9318d1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8950806955557882686
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,12 +260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0cd67f2e33ca647b7caf23b08217c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 0.85
-  pointsPerBlock: 26
+  gameSpeed: 1
+  pointsPerBlock: 53
   scoreText: {fileID: 8950806956731416888}
   isAutoPlayEnabled: 0
-  triesLeft: 0
+  hearts:
+  - {fileID: 1542187625}
+  - {fileID: 6609574301262285848}
+  - {fileID: 6609574300399108013}
   currentScore: 0
+  triesLeft: 3
 --- !u!1001 &8950806956357270931
 PrefabInstance:
   m_ObjectHideFlags: 0
