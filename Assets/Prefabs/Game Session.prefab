@@ -260,9 +260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0cd67f2e33ca647b7caf23b08217c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 1
+  gameSpeed: 0.9
   pointsPerBlock: 63
   pointsPerLevelWon: 200
+  pointsPerLifeNotUsed: 500
   scoreText: {fileID: 8950806956731416888}
   isAutoPlayEnabled: 0
   hearts:
@@ -270,7 +271,7 @@ MonoBehaviour:
   - {fileID: 6609574301262285848}
   - {fileID: 6609574300399108013}
   currentScore: 0
-  triesLeft: 3
+  livesLeft: 3
 --- !u!1001 &8950806956357270931
 PrefabInstance:
   m_ObjectHideFlags: 0
