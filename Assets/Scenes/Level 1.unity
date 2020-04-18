@@ -1635,17 +1635,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5479818371770300870, guid: d310c796ed2e6a748b25f2491afed47f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: dfd5497cf37751b42a3ba4d5fa0b1327,
-        type: 3}
-    - target: {fileID: 5479818371770300871, guid: d310c796ed2e6a748b25f2491afed47f,
-        type: 3}
-      propertyPath: m_Name
-      value: Background
-      objectReference: {fileID: 0}
     - target: {fileID: 5479818372316590966, guid: d310c796ed2e6a748b25f2491afed47f,
         type: 3}
       propertyPath: m_Name
@@ -1705,11 +1694,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5479818373424567368, guid: d310c796ed2e6a748b25f2491afed47f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d310c796ed2e6a748b25f2491afed47f, type: 3}
